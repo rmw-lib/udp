@@ -1,0 +1,42 @@
+{
+  "name": "@rmw/udp",
+  "version": "0.0.0",
+  "repository": "https://github.com/rmw-lib/udp",
+  "author": "i@rmw.link",
+  "license": "MulanPSL-2.0",
+  "exports": {
+    ".": "./lib/index.js",
+    "./*": "./lib/*"
+  },
+  "files": [
+    "/lib"
+  ],
+  "dependencies": {
+    "@chainsafe/bls": "^5.1.1",
+    "@chainsafe/blst": "^0.1.6",
+    "@rmw/config": "^0.0.21",
+    "@rmw/console": "^0.0.15",
+    "@rmw/thisfile": "^0.0.2",
+    "await-sleep": "^0.0.1",
+    "blake3": "^2.1.4",
+    "k-bucket": "^5.1.0",
+    "lodash": "^4.17.20",
+    "nat-puncher": "^0.1.8",
+    "shuffle": "^0.2.5",
+    "split_n": "^1.0.5",
+    "urlsafe-base64": "^1.0.0"
+  },
+  "devDependencies": {
+    "@rmw/md-include": "^0.4.5",
+    "coffeescript": "^2.5.1",
+    "colortape": "^0.1.2",
+    "nodemon": "^2.0.7",
+    "source-map-support": "^0.5.19",
+    "tape": "^5.1.1",
+    "tape-catch": "^1.0.6"
+  },
+  "scripts": {
+    "prepare": "rm -rf lib && rsync -av --include='*/' --include='*.js' --include='*.mjs' --exclude=* src/ lib/ && npx coffee --compile --output lib src/"
+  },
+  "type": "module"
+}
